@@ -48,7 +48,7 @@ export const fashionProducts = [
     image: "/images/d-7.jpg",
     description: "Perfect comfy daily outfit",
     rating: 4.6,
-    price: "$38.99",
+    price: "$35.99",
     link: "https://amzn.to/4qN4Dh3",
     category: "daily-outfits"
   },
@@ -58,7 +58,7 @@ export const fashionProducts = [
     image: "/images/d-99.jpg",
     description: "Stylish and comfortable for everyday wear",
     rating: 4.3,
-    price: "$28.99",
+    price: "$47.49",
     link: "https://amzn.to/45D4HHK",
     category: "daily-outfits"
   },
@@ -68,7 +68,7 @@ export const fashionProducts = [
     image: "/images/d-6.jpg",
     description: "Warm and stylish for cooler days",
     rating: 4.8,
-    price: "$24.99",
+    price: "$37.99",
     link: "https://amzn.to/3M271RR",
     category: "daily-outfits"
   },
@@ -82,7 +82,7 @@ export const homeProducts = [
     image: "/images/hd3.jpg",
     description: "Soft and stylish home accent",
     rating: 4.6,
-    price: "$34.99",
+    price: "$37.99",
     link: "https://amzn.to/3ObBTA4",
     category: "home-decor"
   },
@@ -92,7 +92,7 @@ export const homeProducts = [
     image: "/images/hd1.jpg",
     description: "Ambient lighting for cozy atmosphere",
     rating: 4.8,
-    price: "$18.99",
+    price: "$30.99",
     link: "https://amzn.to/4qM84V8",
     category: "home-decor"
   },
@@ -102,7 +102,7 @@ export const homeProducts = [
     image: "/images/hd2.jpg",
     description: "Beautiful prints for your space",
     rating: 4.5,
-    price: "$26.99",
+    price: "$27.99",
     link: "https://amzn.to/4k9PYdh",
     category: "home-decor"
   },
