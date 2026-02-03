@@ -48,7 +48,7 @@ export const fashionProducts = [
     image: "/images/d-7.jpg",
     description: "Perfect comfy daily outfit",
     rating: 4.6,
-    price: "$32.99",
+    price: "$38.99",
     link: "https://amzn.to/4qN4Dh3",
     category: "daily-outfits"
   },
@@ -117,7 +117,7 @@ export const products: Product[] = [
     image: "/images/daily-outfit.jpg",
     description: "Soft knit two piece set designed for comfort, movement, and effortless everyday style.",
     rating: 4.6,
-    price: "$29.94",
+    price: "$38.99",
     link: "https://amzn.to/4qEmhDR",
     category: "daily-outfits"
   },
@@ -127,7 +127,7 @@ export const products: Product[] = [
     image: "/images/d-2.jpg",
     description: "Relaxed and breathable outfit set perfect for errands, travel, or laid back days.",
     rating: 4.3,
-    price: "$33.99",
+    price: "$26.94",
     link: "https://amzn.to/4bm9xwL",
     category: "daily-outfits"
   },
@@ -137,7 +137,7 @@ export const products: Product[] = [
     image: "/images/d-99.jpg",
     description: "Cozy yet stylish loungewear set that keeps you comfortable all day long.",
     rating: 4.8,
-    price: "$32.29",
+    price: "$47.49",
     link: "https://amzn.to/45D4HHK",
     category: "daily-outfits"
   },
@@ -157,7 +157,7 @@ export const products: Product[] = [
     image: "/images/d-3.jpg",
     description: "Lightweight and cozy set that blends comfort with modern casual style.",
     rating: 4.8,
-    price: "$24.99",
+    price: "$29.99",
     link: "https://amzn.to/49ONPAo",
     category: "daily-outfits"
   },
@@ -187,7 +187,7 @@ export const products: Product[] = [
     image: "/images/amazon-3.jpg",
     description: "Chunky knit oversized sweater that adds warmth and cozy texture to any outfit.",
     rating: 4.5,
-    price: "$39.99",
+    price: "$34.99",
     link: "https://amzn.to/4qzsvVk",
     category: "daily-outfits"
   },
@@ -229,7 +229,7 @@ export const products: Product[] = [
   image: "/images/c-f2.jpg",
   description: "Elegant and lightweight poncho wrap perfect for layering in cool spring, fall, and winter weather.",
   rating: 4.5,
-  price: "$35.99",
+  price: "$38.99",
   link: "https://amzn.to/4rnqawM",
   category: "cozy-fashion"
 },
@@ -252,7 +252,7 @@ export const products: Product[] = [
     image: "/images/a1.jpg",
     description: "Minimal yet elegant earrings that elevate everyday outfits instantly.",
     rating: 4.6,
-    price: "$8.99",
+    price: "$9.99",
     link: "https://amzn.to/4rjjWxI",
     category: "cute-accessories"
   },
@@ -262,7 +262,7 @@ export const products: Product[] = [
     image: "/images/a2.jpg",
     description: "Cute floral hair clips that add a fun and stylish touch to hairstyles.",
     rating: 4.7,
-    price: "$22.99",
+    price: "$9.96",
     link: "https://amzn.to/3ZFwNP6",
     category: "cute-accessories"
   },
@@ -272,7 +272,7 @@ export const products: Product[] = [
     image: "/images/a3.jpg",
     description: "Durable and trendy hair accessories perfect for daily styling.",
     rating: 4.0,
-    price: "$12.99",
+    price: "$15.99",
     link: "https://amzn.to/4qPw6yM",
     category: "cute-accessories"
   },
@@ -284,7 +284,7 @@ export const products: Product[] = [
     image: "/images/hd1.jpg",
     description: "Bright LED mirror with multiple magnification modes for precise makeup.",
     rating: 4.6,
-    price: "$18.99",
+    price: "$30.99",
     link: "https://amzn.to/4qM84V8",
     category: "home-decor"
   },
@@ -294,7 +294,7 @@ export const products: Product[] = [
     image: "/images/hd2.jpg",
     description: "Modern candle warmer lamp that creates a cozy glow without open flames.",
     rating: 4.8,
-    price: "$26.99",
+    price: "$27.99",
     link: "https://amzn.to/4k9PYdh",
     category: "home-decor"
   },
@@ -306,7 +306,7 @@ export const products: Product[] = [
     image: "/images/hd3.jpg",
     description: "Stylish plant shelf with built in grow light for healthy indoor plants.",
     rating: 4.5,
-    price: "$34.99",
+    price: "$37.99",
     link: "https://amzn.to/3ObBTA4",
     category: "home-decor"
   },
@@ -317,7 +317,7 @@ export const products: Product[] = [
     image: "/images/he1.jpg",
     description: "Powerful portable cleaner that removes stains from carpets and upholstery.",
     rating: 4.9,
-    price: "$39.99",
+    price: "$149.99",
     link: "https://amzn.to/46n9mOe",
     category: "home-essentials"
   },
@@ -327,7 +327,7 @@ export const products: Product[] = [
     image: "/images/he2.jpg",
     description: "Durable and hygienic cutting board designed for modern kitchens.",
     rating: 4.4,
-    price: "$21.99",
+    price: "$29.95",
     link: "https://amzn.to/4bWEdor",
     category: "home-essentials"
   },
@@ -337,7 +337,7 @@ export const products: Product[] = [
     image: "/images/he3.jpg",
     description: "Large foldable laundry baskets that save space and stay lightweight.",
     rating: 4.3,
-    price: "$14.99",
+    price: "$11.99",
     link: "https://amzn.to/3Z6Gt5a",
     category: "home-essentials"
   }
