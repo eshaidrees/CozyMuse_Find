@@ -30,7 +30,6 @@ export default function ShopPage() {
         </div>
 
       </div>
-      <Footer />
     </div>
   );
 }

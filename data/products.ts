@@ -119,8 +119,8 @@ export const homeProducts = [
 
 // All products combined - concatenate fashionProducts, homeProducts, and additional products
 export const products: Product[] = [
-  ...fashionProducts,
-  ...homeProducts,
+  // ...fashionProducts,
+  // ...homeProducts,
   // Additional products beyond the initial fashion and home collections
   {
     id: "7",

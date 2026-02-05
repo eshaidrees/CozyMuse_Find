@@ -11,7 +11,6 @@ export default function CategoryLayout({
       <main className="flex-grow">
         {children}
       </main>
-      <Footer />
     </div>
   );
 }
