@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from 'next/font/google'; // Using Inter as a reliable Google font
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
-// Using Inter font from Google Fonts as a replacement for missing Geist fonts
+// Using Inter font from Google Fonts as a reliable Google font
 const geistSans = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,8 +28,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > <Header />
-        {children}
+      >
+        <Header />
+        <main className="min-h-screen flex flex-col">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

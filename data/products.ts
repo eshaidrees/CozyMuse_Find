@@ -1,3 +1,5 @@
+import { generateSlug } from '../lib/utils';
+
 export type Product = {
   id?: string;
   title: string;
@@ -8,6 +10,7 @@ export type Product = {
   price: string;
   link: string;
   category: string;
+  slug: string;
 };
 
 // Category definitions
@@ -50,7 +53,8 @@ export const fashionProducts = [
     rating: 4.6,
     price: "$35.99",
     link: "https://amzn.to/4qN4Dh3",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("PRETTYGARDEN 2 Piece Sets for Women Summer")
   },
   {
     id: "2",
@@ -60,7 +64,8 @@ export const fashionProducts = [
     rating: 4.3,
     price: "$47.49",
     link: "https://amzn.to/45D4HHK",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("Casly Lamiit Lounge Sets for Women 2026 Spring Sweatsuit")
   },
   {
     id: "3",
@@ -70,7 +75,8 @@ export const fashionProducts = [
     rating: 4.8,
     price: "$37.99",
     link: "https://amzn.to/3M271RR",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("BTFBM Casual Two Piece Sets For Women Summer Outfits")
   },
 ];
 
@@ -84,7 +90,8 @@ export const homeProducts = [
     rating: 4.6,
     price: "$37.99",
     link: "https://amzn.to/3ObBTA4",
-    category: "home-decor"
+    category: "home-decor",
+    slug: generateSlug("Bamworld Plant Stand with Grow Light Plant Shelf for Mutiple Pots")
   },
   {
     id: "5",
@@ -94,7 +101,8 @@ export const homeProducts = [
     rating: 4.8,
     price: "$30.99",
     link: "https://amzn.to/4qM84V8",
-    category: "home-decor"
+    category: "home-decor",
+    slug: generateSlug("HUONUL Makeup Mirror, Vanity Mirror with Lights, 2X/3X/10X Magnification")
   },
   {
     id: "6",
@@ -104,14 +112,17 @@ export const homeProducts = [
     rating: 4.5,
     price: "$27.99",
     link: "https://amzn.to/4k9PYdh",
-    category: "home-decor"
+    category: "home-decor",
+    slug: generateSlug("Candle Warmer Lamp with Timer Dimmable")
   },
 ];
 
-// All products combined
+// All products combined - concatenate fashionProducts, homeProducts, and additional products
 export const products: Product[] = [
-  // Daily Outfits - 10+ products
-   {
+  ...fashionProducts,
+  ...homeProducts,
+  // Additional products beyond the initial fashion and home collections
+  {
     id: "7",
     title: "Womens Comfy Knit Lounge Set with Wide Leg Pants",
     image: "/images/daily-outfit.jpg",
@@ -119,7 +130,8 @@ export const products: Product[] = [
     rating: 4.6,
     price: "$38.99",
     link: "https://amzn.to/4qEmhDR",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("Womens Comfy Knit Lounge Set with Wide Leg Pants")
   },
   {
     id: "8",
@@ -129,7 +141,8 @@ export const products: Product[] = [
     rating: 4.3,
     price: "$26.94",
     link: "https://amzn.to/4bm9xwL",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("WIHOLL Womens Casual Two Piece Matching Set")
   },
   {
     id: "9",
@@ -139,7 +152,8 @@ export const products: Product[] = [
     rating: 4.8,
     price: "$47.49",
     link: "https://amzn.to/45D4HHK",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("Casly Lamiit Womens Soft Lounge Sweatsuit Set")
   },
   {
     id: "10",
@@ -149,7 +163,8 @@ export const products: Product[] = [
     rating: 4.3,
     price: "$51.99",
     link: "https://amzn.to/4k4d1WS",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("Fleece Lined Womens 2 Piece Lounge Outfit")
   },
   {
     id: "11",
@@ -159,7 +174,8 @@ export const products: Product[] = [
     rating: 4.8,
     price: "$29.99",
     link: "https://amzn.to/49ONPAo",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("PRETTYGARDEN Womens Matching Lounge Set")
   },
   {
     id: "12",
@@ -169,7 +185,8 @@ export const products: Product[] = [
     rating: 4.4,
     price: "$37.99",
     link: "https://amzn.to/3M271RR",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("BTFBM Womens Summer Two Piece Outfit Set")
   },
   {
     id: "13",
@@ -179,7 +196,8 @@ export const products: Product[] = [
     rating: 4.6,
     price: "$35.99",
     link: "https://amzn.to/4qN4Dh3",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("PRETTYGARDEN Casual Summer Lounge Set")
   },
   {
     id: "14",
@@ -189,27 +207,30 @@ export const products: Product[] = [
     rating: 4.5,
     price: "$34.99",
     link: "https://amzn.to/4qzsvVk",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("Oversized Cable Knit Sweater for Women")
   },
   {
     id: "16",
-    title: "GRACE KARIN Women’s Business Casual Sweater Blazer",
+    title: "GRACE KARIN Women's Business Casual Sweater Blazer",
     image: "/images/d-8.jpg",
     description: "Blazer style sweater that delivers a polished office look with soft comfort.",
     rating: 4.2,
     price: "$29.69",
     link: "https://amzn.to/4bs2Ida",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("GRACE KARIN Women's Business Casual Sweater Blazer")
   },
   {
     id: "17",
-    title: "LILLUSORY Women’s Zip Up Cardigan Sweater",
+    title: "LILLUSORY Women's Zip Up Cardigan Sweater",
     image: "/images/d-11.jpg",
     description: "Lightweight zip cardigan perfect for layering in every season.",
     rating: 4.7,
     price: "$14.99",
     link: "https://amzn.to/4q99fx4",
-    category: "daily-outfits"
+    category: "daily-outfits",
+    slug: generateSlug("LILLUSORY Women's Zip Up Cardigan Sweater")
   },
 
   // Cozy Fashion - 3+ products
@@ -221,7 +242,8 @@ export const products: Product[] = [
   rating: 4.9,
   price: "$18.99",
   link: "https://amzn.to/49MYUSs",
-  category: "cozy-fashion"
+  category: "cozy-fashion",
+  slug: generateSlug("Womens Winter Knit Beanie, Scarf and Touchscreen Gloves Set")
 },
 {
   id: "19",
@@ -231,7 +253,8 @@ export const products: Product[] = [
   rating: 4.5,
   price: "$38.99",
   link: "https://amzn.to/4rnqawM",
-  category: "cozy-fashion"
+  category: "cozy-fashion",
+  slug: generateSlug("PULI Womens Soft Shawl Wrap Open Front Poncho Sweater")
 },
 {
   id: "20",
@@ -241,7 +264,8 @@ export const products: Product[] = [
   rating: 4.4,
   price: "$32.39",
   link: "https://amzn.to/4k9QCaD",
-  category: "cozy-fashion"
+  category: "cozy-fashion",
+  slug: generateSlug("BenBoy Womens Cropped Puffer Jacket Warm Quilted Coat")
 },
 
 
@@ -254,7 +278,8 @@ export const products: Product[] = [
     rating: 4.6,
     price: "$9.99",
     link: "https://amzn.to/4rjjWxI",
-    category: "cute-accessories"
+    category: "cute-accessories",
+    slug: generateSlug("Trendy Gold Plated Knot Earrings")
   },
   {
     id: "22",
@@ -264,7 +289,8 @@ export const products: Product[] = [
     rating: 4.7,
     price: "$9.96",
     link: "https://amzn.to/3ZFwNP6",
-    category: "cute-accessories"
+    category: "cute-accessories",
+    slug: generateSlug("Hawaiian Flower Hair Claw Clips Set")
   },
   {
     id: "23",
@@ -274,7 +300,8 @@ export const products: Product[] = [
     rating: 4.0,
     price: "$15.99",
     link: "https://amzn.to/4qPw6yM",
-    category: "cute-accessories"
+    category: "cute-accessories",
+    slug: generateSlug("Metal Flower Hair Claw Clips 6 Piece Set")
   },
 
   // Home Decor
@@ -286,7 +313,8 @@ export const products: Product[] = [
     rating: 4.6,
     price: "$30.99",
     link: "https://amzn.to/4qM84V8",
-    category: "home-decor"
+    category: "home-decor",
+    slug: generateSlug("Lighted Vanity Makeup Mirror with Magnification")
   },
   {
     id: "25",
@@ -296,7 +324,8 @@ export const products: Product[] = [
     rating: 4.8,
     price: "$27.99",
     link: "https://amzn.to/4k9PYdh",
-    category: "home-decor"
+    category: "home-decor",
+    slug: generateSlug("Dimmable Candle Warmer Lamp with Timer")
   },
 
   // Home Essentials
@@ -308,7 +337,8 @@ export const products: Product[] = [
     rating: 4.5,
     price: "$37.99",
     link: "https://amzn.to/3ObBTA4",
-    category: "home-decor"
+    category: "home-decor",
+    slug: generateSlug("Bamworld Multi Tier Plant Stand with Grow Light")
   },
 
   {
@@ -319,7 +349,8 @@ export const products: Product[] = [
     rating: 4.9,
     price: "$149.99",
     link: "https://amzn.to/46n9mOe",
-    category: "home-essentials"
+    category: "home-essentials",
+    slug: generateSlug("BISSELL Little Green Max Portable Carpet Cleaner")
   },
   {
     id: "28",
@@ -329,7 +360,8 @@ export const products: Product[] = [
     rating: 4.4,
     price: "$29.95",
     link: "https://amzn.to/4bWEdor",
-    category: "home-essentials"
+    category: "home-essentials",
+    slug: generateSlug("Titanium Non Toxic 2 in 1 Cutting Board")
   },
   {
     id: "29",
@@ -339,6 +371,7 @@ export const products: Product[] = [
     rating: 4.3,
     price: "$11.99",
     link: "https://amzn.to/3Z6Gt5a",
-    category: "home-essentials"
+    category: "home-essentials",
+    slug: generateSlug("Lifewit Collapsible Laundry Hamper 2 Pack")
   }
 ]

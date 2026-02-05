@@ -65,6 +65,7 @@ const CategoryPage = async ({ params }: CategoryPageProps) => {
             description={product.description}
             rating={product.rating}
             link={product.link}
+            slug={product.slug}
             index={index}
             totalProducts={filteredProducts.length}
           />

@@ -22,6 +22,7 @@ export default function ShopPage() {
                 description={product.description}
                 rating={product.rating}
                 link={product.link}
+                slug={product.slug}
                 delay={index * 0.05}
               />
             </div>

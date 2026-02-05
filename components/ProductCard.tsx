@@ -15,6 +15,7 @@ interface ProductCardProps {
   description: string;
   rating: number;
   link: string;
+  slug: string;
   delay?: number;
 }
 
@@ -26,6 +27,7 @@ const ProductCard = ({
   description,
   rating,
   link,
+  slug,
   delay = 0,
 }: ProductCardProps) => {
 
@@ -37,13 +39,13 @@ const ProductCard = ({
       className="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full"
     >
       {/* Product Image */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden aspect-square">
         <Image
           src={image}
           alt={title}
           width={500}
           height={500}
-          className="rounded-xl w-full"
+          className="rounded-xl w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
@@ -56,18 +58,13 @@ const ProductCard = ({
         <div className="flex items-center justify-between mt-auto pt-2">
           <span className="font-semibold text-gray-900">{price}</span>
           <div className="flex flex-col gap-2">
-           {link && (
             <Link
-           href={link}
-           target="_blank"
-           rel="noopener noreferrer sponsored"
-          className="flex bg-black text-white px-5 py-2 gap-2 rounded text-center"
-             >
-            See on Amazon
-
+              href={`/product/${slug}`}
+              className="flex bg-black text-white px-5 py-2 gap-2 rounded text-center hover:bg-gray-800 transition-colors"
+            >
+              View Details
               <ExternalLink className="w-3 h-6" />
             </Link>
-            )}
           </div>
         </div>
       </div>

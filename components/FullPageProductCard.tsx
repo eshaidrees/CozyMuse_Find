@@ -17,6 +17,7 @@ interface FullPageProductCardProps {
   description: string;
   rating: number;
   link: string;
+  slug: string;
   index: number;
   totalProducts: number;
 }
@@ -29,6 +30,7 @@ const FullPageProductCard = ({
   description,
   rating,
   link,
+  slug,
   index,
   totalProducts
 }: FullPageProductCardProps) => {
@@ -71,15 +73,13 @@ const FullPageProductCard = ({
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`/product/${slug}`}
                   className={cn(
                     buttonVariants({ variant: 'cozy-primary', size: 'lg' }),
                     'flex items-center justify-center gap-2 flex-1'
                   )}
                 >
-                  See on Amazon
+                  View Details
                   <ExternalLink className="w-4 h-4" />
                 </Link>
               </div>

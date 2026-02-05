@@ -99,6 +99,7 @@ export default function Home() {
                 description={product.description}
                 rating={product.rating}
                 link={product.link}
+                slug={product.slug}
                 delay={index * 0.1}
               />
             ))}
@@ -129,6 +130,7 @@ export default function Home() {
                 description={product.description}
                 rating={product.rating}
                 link={product.link}
+                slug={product.slug}
                 delay={index * 0.1}
               />
             ))}
