@@ -107,32 +107,28 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <span className="ml-2 text-gray-600">{product.rating.toFixed(1)}</span>
                 </div>
 
-                <p className="text-2xl font-semibold text-amber-600 mb-6">
-                  {product.price}
-                </p>
-
-                <p className="text-gray-700 text-base leading-relaxed mb-8">
+                <p className="text-gray-700 text-base leading-relaxed mb-6">
                   {product.description}
                 </p>
+
+                <div className="mb-6">
+                  <Button
+                    asChild
+                    className="w-full py-6 text-base sm:text-lg font-semibold bg-amber-600 hover:bg-amber-700 transition-colors"
+                  >
+                    <a
+                      href={product.link}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                    >
+                      Check latest price on Amazon
+                    </a>
+                  </Button>
+                </div>
               </div>
 
-              <div className="space-y-4">
-                <Button
-                  asChild
-                  className="w-full py-6 text-lg font-semibold bg-amber-600 hover:bg-amber-700 transition-colors"
-                >
-                  <a
-                    href={product.link}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                  >
-                    See on Amazon
-                  </a>
-                </Button>
-
-                <div className="text-center text-sm text-gray-500">
-                  <p>As an Amazon Associate, we earn from qualifying purchases.</p>
-                </div>
+              <div className="text-center text-sm text-gray-500">
+                <p>As an Amazon Associate, we earn from qualifying purchases.</p>
               </div>
             </div>
           </div>

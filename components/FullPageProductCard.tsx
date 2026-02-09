@@ -12,7 +12,6 @@ interface FullPageProductCardProps {
   id: string;
   title: string;
   brand?: string;
-  price: string;
   image: string;
   description: string;
   rating: number;
@@ -25,7 +24,6 @@ interface FullPageProductCardProps {
 const FullPageProductCard = ({
   id,
   title,
-  price,
   image,
   description,
   rating,
@@ -66,22 +64,29 @@ const FullPageProductCard = ({
 
                 <p className="text-gray-700 text-lg mb-6 leading-relaxed">{description}</p>
 
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="text-3xl font-bold text-gray-900">{price}</span>
+                <div className="flex flex-col gap-4 mb-8">
+                  <Link
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className={cn(
+                      buttonVariants({ variant: 'cozy-primary', size: 'lg' }),
+                      'flex items-center justify-center gap-2 w-full'
+                    )}
+                  >
+                    Check latest price on Amazon
+                  </Link>
+                  <Link
+                    href={`/product/${slug}`}
+                    className={cn(
+                      buttonVariants({ variant: 'cozy-primary', size: 'lg' }),
+                      'flex items-center justify-center gap-2 w-full'
+                    )}
+                  >
+                    View Details
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
                 </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href={`/product/${slug}`}
-                  className={cn(
-                    buttonVariants({ variant: 'cozy-primary', size: 'lg' }),
-                    'flex items-center justify-center gap-2 flex-1'
-                  )}
-                >
-                  View Details
-                  <ExternalLink className="w-4 h-4" />
-                </Link>
               </div>
             </div>
           </div>

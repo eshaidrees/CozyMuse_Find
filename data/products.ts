@@ -111,7 +111,7 @@ export const homeProducts = [
     description: "Beautiful prints for your space",
     rating: 4.5,
     price: "$27.99",
-    link: "https://amzn.to/4k9PYdh",
+    link: "https://amzn.to/4a4LT6S",
     category: "home-decor",
     slug: generateSlug("Candle Warmer Lamp with Timer Dimmable")
   },
@@ -119,8 +119,8 @@ export const homeProducts = [
 
 // All products combined - concatenate fashionProducts, homeProducts, and additional products
 export const products: Product[] = [
-  // ...fashionProducts,
-  // ...homeProducts,
+  ...fashionProducts,
+  ...homeProducts,
   // Additional products beyond the initial fashion and home collections
   {
     id: "7",
@@ -323,14 +323,45 @@ export const products: Product[] = [
     description: "Modern candle warmer lamp that creates a cozy glow without open flames.",
     rating: 4.8,
     price: "$27.99",
-    link: "https://amzn.to/4k9PYdh",
+    link: "https://amzn.to/4a4LT6S",
     category: "home-decor",
     slug: generateSlug("Dimmable Candle Warmer Lamp with Timer")
+  },
+    {
+    id: "32",
+    title: "JJY Framed Pink Coquette Wall Art Prints - Set of 4 Preppy Aesthetic Posters ",
+    image: "/images/hd6.jpg",
+    description: "A set of 4 framed pink coquette wall art prints featuring bows, cherries, and preppy designs. Perfect for girls' bedrooms, dorms, and trendy aesthetic décor.",
+    rating: 4.8,
+    price: "$27.99",
+    link: "https://amzn.to/4r5CdPv",
+    category: "home-decor",
+    slug: generateSlug("JJY Framed Pink Coquette Wall Art Prints - Set of 4 Preppy Aesthetic Posters")
+  },  {
+    id: "26",
+    title: "PESRAE Floor Lamp with Table and Charging Station - LED Side Table Lamp with Shelves",
+    image: "/images/hd5.jpg",
+    description: "A modern floor lamp with built-in shelves and charging station, featuring 3 light colors, USB, Type-C, and AC ports. Perfect for bedrooms and living rooms where space and convenience matter",
+    rating: 4.8,
+    price: "$27.99",
+    link: "https://amzn.to/4kvnNG8",
+    category: "home-decor",
+    slug: generateSlug("PESRAE Floor Lamp with Table and Charging Station - LED Side Table Lamp with Shelves")
+  },  {
+    id: "27",
+    title: "Umbra Exhibit Adjustable Picture Frame Gallery Set - 5-Photo Wall Display (Black)",
+    image: "/images/hd4.jpg",
+    description: "Create a modern gallery wall with the Umbra Exhibit Set. This adjustable display holds five photos (two 4 6 and three 5 7) on a sleek black metal beam. Easy to mount with just two screws, it blends with any décor and adds a clean, contemporary touch to bedrooms, living rooms, or offices.",
+    rating: 4.8,
+    price: "$27.99",
+    link: "https://amzn.to/4aEenob",
+    category: "home-decor",
+    slug: generateSlug("Umbra Exhibit Adjustable Picture Frame Gallery Set - 5-Photo Wall Display (Black)")
   },
 
   // Home Essentials
   {
-    id: "26",
+    id: "28",
     title: "Bamworld Multi Tier Plant Stand with Grow Light",
     image: "/images/hd3.jpg",
     description: "Stylish plant shelf with built in grow light for healthy indoor plants.",
@@ -342,7 +373,7 @@ export const products: Product[] = [
   },
 
   {
-    id: "27",
+    id: "29",
     title: "BISSELL Little Green Max Portable Carpet Cleaner",
     image: "/images/he1.jpg",
     description: "Powerful portable cleaner that removes stains from carpets and upholstery.",
@@ -353,7 +384,7 @@ export const products: Product[] = [
     slug: generateSlug("BISSELL Little Green Max Portable Carpet Cleaner")
   },
   {
-    id: "28",
+    id: "30",
     title: "Titanium Non Toxic 2 in 1 Cutting Board",
     image: "/images/he2.jpg",
     description: "Durable and hygienic cutting board designed for modern kitchens.",
@@ -364,7 +395,7 @@ export const products: Product[] = [
     slug: generateSlug("Titanium Non Toxic 2 in 1 Cutting Board")
   },
   {
-    id: "29",
+    id: "31",
     title: "Lifewit Collapsible Laundry Hamper 2 Pack",
     image: "/images/he3.jpg",
     description: "Large foldable laundry baskets that save space and stay lightweight.",

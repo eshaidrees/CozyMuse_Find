@@ -10,7 +10,6 @@ interface ProductCardProps {
   id: string;
   title: string;
   brand?: string;
-  price: string;
   image: string;
   description: string;
   rating: number;
@@ -22,7 +21,6 @@ interface ProductCardProps {
 const ProductCard = ({
   id,
   title,
-  price,
   image,
   description,
   rating,
@@ -55,17 +53,22 @@ const ProductCard = ({
         <h3 className="font-bold text-gray-800 line-clamp-2 mb-1">{title}</h3>
         <p className="text-sm text-gray-600 mb-3 flex-grow">{description}</p>
 
-        <div className="flex items-center justify-between mt-auto pt-2">
-          <span className="font-semibold text-gray-900">{price}</span>
-          <div className="flex flex-col gap-2">
-            <Link
-              href={`/product/${slug}`}
-              className="flex bg-black text-white px-5 py-2 gap-2 rounded text-center hover:bg-gray-800 transition-colors"
-            >
-              View Details
-              <ExternalLink className="w-3 h-6" />
-            </Link>
-          </div>
+        <div className="flex flex-col gap-2 mt-auto pt-2">
+          <Link
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="w-full bg-amber-600 hover:bg-amber-700 text-white px-4 py-3 rounded text-center transition-colors text-sm font-medium"
+          >
+            Check latest price on Amazon
+          </Link>
+          <Link
+            href={`/product/${slug}`}
+            className="w-full flex bg-gray-800 text-white px-4 py-3 gap-2 rounded text-center hover:bg-gray-900 transition-colors text-sm font-medium justify-center"
+          >
+            View Details
+            <ExternalLink className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </motion.div>
