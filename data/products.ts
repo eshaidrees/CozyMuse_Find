@@ -514,7 +514,7 @@ export const fullLooks: FullLook[] = [
       },
       {
         id: "fl-2-accessories",
-        title: "https://amzn.to/4aFIISl",
+        title: "Women's Jewelry Sets Crystal Butterfly Earrings Necklaces",
         image: "/images/fl-2-acc.jpg",
         description: "Women Cubic Zirconia White Gold Butterfly Necklace Ring Bangle Bracelet Birthday Anniversary Valentines Mother's Day Jewelry Gifts for Mom Bridesmaid Wife Sister Friend.",
         rating: 4.7,
