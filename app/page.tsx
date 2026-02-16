@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Tag, Heart, Sparkles, DollarSign, Award } from "lucide-react";
-import Footer from "@/components/footer";
+import { TrendingUp, DollarSign, Award } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import CategoryCard from "@/components/CategoryCard";
 import { Button } from "@/components/ui/button";
@@ -194,8 +193,6 @@ export default function Home() {
 
       {/* Email Signup Section */}
       <Newsletter className="py-16" />
-
-      <Footer />
     </div>
   );
 }

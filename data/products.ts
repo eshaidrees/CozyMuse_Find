@@ -13,6 +13,25 @@ export type Product = {
   slug: string;
 };
 
+export type OutfitItem = {
+  id: string;
+  title: string;
+  image: string;
+  description: string;
+  rating: number;
+  link: string;
+  itemType: 'clothing' | 'shoes' | 'bag' | 'accessories';
+};
+
+export type FullLook = {
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+  coverImage: string;
+  items: OutfitItem[];
+};
+
 // Category definitions
 export const categories = [
   {
@@ -39,6 +58,11 @@ export const categories = [
     id: "home-essentials",
     title: "Home Essentials",
     image: "/images/he2.jpg",
+  },
+  {
+    id: "full-look",
+    title: "Full Look",
+    image: "/images/fl-2-outfit.jpg",
   },
 ];
 
@@ -406,3 +430,187 @@ export const products: Product[] = [
     slug: generateSlug("Lifewit Collapsible Laundry Hamper 2 Pack")
   }
 ]
+
+// Full Look - Complete Outfits
+export const fullLooks: FullLook[] = [
+  {
+    id: "fl-1",
+    title: "Polished Winter Workwear Look",
+    slug: "cozy-winter-essentials",
+    description: "A refined cold-weather outfit featuring a structured blazer set, classic pointed heels, a spacious tote bag, and elegant gold jewelry. Perfect for office days, meetings, or stylish city outings.",
+    coverImage: "/images/fl-1-outfit.jpg",
+    items: [
+      {
+        id: "fl-1-clothing",
+        title: "Womens Suits 2 Piece Set Business Casual Blazer Jacket Wide Leg Dress Pants Suits Professional Work Office Outfits",
+        image: "/images/fl-1-outfit.jpg",
+        description: "Business Casual Outfits For Women: Suits for women combine a loose a bit oversized blazer and high-waisted wide leg dressy pants, crafted from quality fabric with a comfortable feel and good drape. The blend of structured tailoring and comfort makes these blazer sets women 2 piece outfits ideal for business casual, formal, occasions, offering an effortlessly polished look.",
+        rating: 4.6,
+        link: "https://amzn.to/4tE2ard",
+        itemType: "clothing",
+      },
+      {
+        id: "fl-1-shoes",
+        title: "Nine WEST Womens Wnflax",
+        image: "/images/fl-1-shoes.jpg",
+        description: "Pointed-toe pumps. Available in a variety of different uppers including synthetic and leather materials. Lightly cushioned man-made footbed. Wrapped stiletto heel..",
+        rating: 4.5,
+        link: "https://amzn.to/4kBVcPb",
+        itemType: "shoes",
+      },
+      {
+        id: "fl-1-bag",
+        title: "LOVEVOOK Laptop Tote Bag for Women",
+        image: "/images/fl-1-bag.jpg",
+        description: "Work Bags Laptop Bag Teacher Tote Bag, Leather Computer Bag Large Purses Handbag Professional Briefcase, Black, Fits 15.6 Inch Laptop, Black.",
+        rating: 4.7,
+        link: "https://amzn.to/4rfePPC",
+        itemType: "bag",
+      },
+      {
+        id: "fl-1-accessories",
+        title: "PAVOI 14K Gold Plated 925 Sterling Silver Post Teardrop Chunky Hoop Earrings",
+        image: "/images/fl-1-acc.jpg",
+        description: "Elevate your look with our hollow hoops. Measuring 22mm high and 12mm wide, these chunky, lightweight earrings ensure comfortable wear. These hoops feature 925 sterling silver posts and a long-lasting finish. They’re the perfect addition to any outfit, adding effortless luxury..",
+        rating: 4.8,
+        link: "https://amzn.to/4tG0rlc",
+        itemType: "accessories",
+      },
+    ],
+  },
+  {
+    id: "fl-2",
+    title: "Elegant Event-Ready Ensemble",
+    slug: "casual-chic-loungewear",
+    description: "A graceful statement look with a flowing maxi dress, block heel sandals, a sleek clutch, and delicate jewelry. Ideal for weddings, parties, or special evening occasions.",
+    coverImage: "/images/fl-2-outfit.jpg",
+    items: [
+      { 
+        id: "fl-2-clothing",
+        title: "Women Plus Size Maxi Dress Long Sleeve Square Neck Wedding Guest Cocktail Belted Elegant Flowy A Line Long Dresses",
+        image: "/images/fl-2-outfit.jpg",
+        description: "This plus size dresses for curvy women is made of skin-friendly, lightweight, and breathable material, perfect for wearing in fall, spring, winter, and summer as off shoulder dress. The elegant plus size dress drapes beautifully and flows gracefully, creating a flattering silhouette.",
+        rating: 4.3,
+        link: "https://amzn.to/46SYMia",
+        itemType: "clothing",
+      },
+      {
+        id: "fl-2-shoes",
+        title: "Carcuume Women's Square Toe Two Strap Open Toe Block Heels Sandals Slip On Shoes",
+        image: "/images/fl-2-shoes.jpg",
+        description: "Women's Square Toe Two Strap Open Toe Block Heels Sandals Slip On Shoes",
+        rating: 4.6,
+        link: "https://amzn.to/4aFIISl",
+        itemType: "shoes",
+      },
+      {
+        id: "fl-2-bag",
+        title: "Women Envelope Clutch Faux Saffiano Leather Evening Handbag Foldover Clutch Bag Formal Dressy Purse",
+        image: "/images/fl-2-bag.jpg",
+        description: "Dressy Purse --- It was made from Fined Faux Saffiano leather. Gold-finish hardware and lined in twilling fabric with 2 compartments and 2 zipper pockets.",
+        rating: 4.4,
+        link: "https://amzn.to/4aSbtMK",
+        itemType: "bag",
+      },
+      {
+        id: "fl-2-accessories",
+        title: "https://amzn.to/4aFIISl",
+        image: "/images/fl-2-acc.jpg",
+        description: "Women Cubic Zirconia White Gold Butterfly Necklace Ring Bangle Bracelet Birthday Anniversary Valentines Mother's Day Jewelry Gifts for Mom Bridesmaid Wife Sister Friend.",
+        rating: 4.7,
+        link: "https://amzn.to/46wdNqn",
+        itemType: "accessories",
+      },
+    ],
+  },
+  {
+    id: "fl-3",
+    title: "Modern Smart Casual Outfit",
+    slug: "elevated-everyday-style",
+    description: "A balanced everyday look combining a tailored jumpsuit, comfortable strappy sandals, a chic shoulder bag, and soft gold accessories. Effortless style for brunch, work, or casual events.",
+    coverImage: "/images/fl-3-outfit.jpg",
+    items: [
+      {
+        id: "fl-3-clothing",
+        title: "Women's One Piece Jumpsuits Dressy Casual Summer Short Sleeve ",
+        image: "/images/fl-3-outfit.jpg",
+        description: "Short Sleeve Jumpsuit; Wrap V Neck Rompers; Belt Jumpsuits; Pants Romper; One Piece Outfits; Wide Leg Jumpsuits; Summer One Piece Outfits For Women; Casual Romper With Pockets; Elegant Party Jumpsuit; Dressy Jumpsuit Rompers",
+        rating: 4.2,
+        link: "https://amzn.to/3MbK7b6",
+        itemType: "clothing",
+      },
+      {
+        id: "fl-3-shoes",
+        title: "Black Nude White Gold Women Sandals Comfortable Walking",
+        image: "/images/fl-3-shoes.jpg",
+        description: "Comfortable Walking Strappy Open Toe Sandals for Women Dressy Summer 1 Inch Low Block Heel Flat Adjustable Ankle Strap Shoes.",
+        rating: 4.4,
+        link: "https://amzn.to/4aQW4MC",
+        itemType: "shoes",
+      },
+      {
+        id: "fl-3-bag",
+        title: "Shoulder Bag for Women Cute Hobo Purses and Handbags",
+        image: "/images/fl-3-bag.jpg",
+        description: "his cute purse includes 3 card slot pockets, 1 zipper pouch and main pocket inside, making it spacious enough to organize your essentials.",
+        rating: 4.6,
+        link: "https://amzn.to/4cvZFRp",
+        itemType: "bag",
+      },
+      {
+        id: "fl-3-accessories",
+        title: "Gold Jewelry Set for Women - 16K Gold Plated Pearl Necklace and Earring Set ",
+        image: "/images/fl-3-acc.jpg",
+        description: "Women - 16K Gold Plated Pearl Necklace and Earring Set With Drop Earrings,Charm Layered Necklace,Adjustable Bracelets - Dainty Women's Pearl Jewelry Set For Wedding Gifts.",
+        rating: 4.6,
+        link: "https://amzn.to/4rsnFd8",
+        itemType: "accessories",
+      },
+    ],
+  },
+  // {
+  //   id: "fl-4",
+  //   title: "Weekend Brunch Outfit",
+  //   slug: "weekend-brunch-outfit",
+  //   description: "A feminine and flirty outfit with a cozy cardigan, flowy skirt, ballet flats, and delicate jewelry. Perfect for weekend gatherings.",
+  //   coverImage: "/images/d-11.jpg",
+  //   items: [
+  //     {
+  //       id: "fl-4-clothing",
+  //       title: "LILLUSORY Women's Zip Up Cardigan Sweater",
+  //       image: "/images/d-11.jpg",
+  //       description: "Lightweight zip cardigan perfect for layering.",
+  //       rating: 4.7,
+  //       link: "https://amzn.to/4q99fx4",
+  //       itemType: "clothing",
+  //     },
+  //     {
+  //       id: "fl-4-shoes",
+  //       title: "Women's Ballet Flats",
+  //       image: "/images/d-3.jpg",
+  //       description: "Comfortable and elegant ballet flats for all-day wear.",
+  //       rating: 4.5,
+  //       link: "https://amzn.to/4q99fx4",
+  //       itemType: "shoes",
+  //     },
+  //     {
+  //       id: "fl-4-bag",
+  //       title: "Mini Shoulder Bag with Chain Strap",
+  //       image: "/images/a2.jpg",
+  //       description: "Cute mini bag with elegant chain detail.",
+  //       rating: 4.3,
+  //       link: "https://amzn.to/4q99fx4",
+  //       itemType: "bag",
+  //     },
+  //     {
+  //       id: "fl-4-accessories",
+  //       title: "Metal Flower Hair Claw Clips 6 Piece Set",
+  //       image: "/images/a3.jpg",
+  //       description: "Durable and trendy hair accessories perfect for daily styling.",
+  //       rating: 4.0,
+  //       link: "https://amzn.to/4qPw6yM",
+  //       itemType: "accessories",
+  //     },
+  //   ],
+  // },
+];

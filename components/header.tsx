@@ -38,6 +38,7 @@ const Header = () => {
     { name: 'Cute Accessories', href: '/category/cute-accessories' },
     { name: 'Home Decor', href: '/category/home-decor' },
     { name: 'Home Essentials', href: '/category/home-essentials' },
+    { name: 'Full Look', href: '/category/full-look' },
   ];
 
   return (
