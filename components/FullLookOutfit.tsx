@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ExternalLink, Shirt, Footprints, ShoppingBag, Gem } from "lucide-react";
+import { ExternalLink, Shirt, Footprints, ShoppingBag, Gem, Armchair, Cloud } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +14,7 @@ interface OutfitItemProps {
     description: string;
     rating: number;
     link: string;
-    itemType: "clothing" | "shoes" | "bag" | "accessories";
+    itemType: "clothing" | "pants" | "coat" | "shoes" | "bag" | "accessories";
   };
   delay: number;
 }
@@ -24,6 +24,16 @@ const itemTypeConfig = {
     label: "Clothing",
     icon: Shirt,
     color: "bg-rose-100 text-rose-600",
+  },
+  pants: {
+    label: "Pants",
+    icon: Armchair,
+    color: "bg-purple-100 text-purple-600",
+  },
+  coat: {
+    label: "Coat",
+    icon: Cloud,
+    color: "bg-indigo-100 text-indigo-600",
   },
   shoes: {
     label: "Shoes",
@@ -129,7 +139,7 @@ interface FullLookOutfitProps {
       description: string;
       rating: number;
       link: string;
-      itemType: "clothing" | "shoes" | "bag" | "accessories";
+      itemType: "clothing" | "pants" | "coat" | "shoes" | "bag" | "accessories";
     }>;
   };
 }
@@ -144,8 +154,10 @@ export default function FullLookOutfit({ fullLook }: FullLookOutfitProps) {
     {} as Record<string, typeof fullLook.items[0]>
   );
 
-  const typeOrder: Array<"clothing" | "shoes" | "bag" | "accessories"> = [
+  const typeOrder: Array<"clothing" | "pants" | "coat" | "shoes" | "bag" | "accessories"> = [
     "clothing",
+    "pants",
+    "coat",
     "shoes",
     "bag",
     "accessories",
@@ -242,7 +254,7 @@ export default function FullLookOutfit({ fullLook }: FullLookOutfitProps) {
         </motion.div>
 
         {/* Items Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {typeOrder.map((type, index) => {
             const item = itemsByType[type];
             if (!item) return null;

@@ -20,7 +20,7 @@ export type OutfitItem = {
   description: string;
   rating: number;
   link: string;
-  itemType: 'clothing' | 'shoes' | 'bag' | 'accessories';
+  itemType: 'clothing' | 'pants' | 'coat' | 'shoes' | 'bag' | 'accessories';
 };
 
 export type FullLook = {
@@ -568,49 +568,67 @@ export const fullLooks: FullLook[] = [
       },
     ],
   },
-  // {
-  //   id: "fl-4",
-  //   title: "Weekend Brunch Outfit",
-  //   slug: "weekend-brunch-outfit",
-  //   description: "A feminine and flirty outfit with a cozy cardigan, flowy skirt, ballet flats, and delicate jewelry. Perfect for weekend gatherings.",
-  //   coverImage: "/images/d-11.jpg",
-  //   items: [
-  //     {
-  //       id: "fl-4-clothing",
-  //       title: "LILLUSORY Women's Zip Up Cardigan Sweater",
-  //       image: "/images/d-11.jpg",
-  //       description: "Lightweight zip cardigan perfect for layering.",
-  //       rating: 4.7,
-  //       link: "https://amzn.to/4q99fx4",
-  //       itemType: "clothing",
-  //     },
-  //     {
-  //       id: "fl-4-shoes",
-  //       title: "Women's Ballet Flats",
-  //       image: "/images/d-3.jpg",
-  //       description: "Comfortable and elegant ballet flats for all-day wear.",
-  //       rating: 4.5,
-  //       link: "https://amzn.to/4q99fx4",
-  //       itemType: "shoes",
-  //     },
-  //     {
-  //       id: "fl-4-bag",
-  //       title: "Mini Shoulder Bag with Chain Strap",
-  //       image: "/images/a2.jpg",
-  //       description: "Cute mini bag with elegant chain detail.",
-  //       rating: 4.3,
-  //       link: "https://amzn.to/4q99fx4",
-  //       itemType: "bag",
-  //     },
-  //     {
-  //       id: "fl-4-accessories",
-  //       title: "Metal Flower Hair Claw Clips 6 Piece Set",
-  //       image: "/images/a3.jpg",
-  //       description: "Durable and trendy hair accessories perfect for daily styling.",
-  //       rating: 4.0,
-  //       link: "https://amzn.to/4qPw6yM",
-  //       itemType: "accessories",
-  //     },
-  //   ],
-  // },
+  {
+    id: "fl-4",
+    title: "Chic Winter Layered Look",
+    slug: "chic-winter-layered-look",
+    description: "A sophisticated cold-weather ensemble featuring a turtleneck sweater, high-waisted wide-leg pants, a tailored wool coat, ankle boots, and a structured crossbody bag. Perfect for office commutes or winter city outings.",
+    coverImage: "/images/f-4-coat.jpg",
+    items: [
+      {
+        id: "fl-4-clothing",
+        title: "Womens Ribbed Long Sleeve Crewneck Casual Slim Basic Shirts Fitted Knit Tops",
+        image: "/images/f-4-shirt.jpg",
+        description: "Material:High quality knit soft stretchy Rayon spandex fabric,flexible and breathable,comfortable to wear.Features:Long Sleeve Tops,Crewneck, Solid Color,Slim, Ribbed Knit Fit,Super Soft, Cute Full Length Style,Casual Basic Shirt Top.Simple and unique style make you beautiful and comfortable.",
+        rating: 4.5,
+        link: "https://amzn.to/4kMYC1P",
+        itemType: "clothing",
+      },
+      {
+        id: "fl-4-pants",
+        title: "Women's Wide Leg Jeans High Waisted Stretchy Raw Hem Zimbaplatinum Denim Pants",
+        image: "/images/f-4-pants.jpg",
+        description: "Trendy Zimbaplatinum jean features wide leg, high waisted, raw hem, side seam, loose fit, zipper and basic five pockets design. The raw hem detailing add a touch of rugged charm to your outfit. These jeans have a baggy design. For the best fit, please check the size chart before purchasing",
+        rating: 4.4,
+        link: "https://amzn.to/4rEpGmg",
+        itemType: "pants",
+      },
+      {
+        id: "fl-4-coat",
+        title: "Women Winter Wool Blend Camel Mid-Long Coat Notch Double-Breasted Lapel Jacket Outwear",
+        image: "/images/f-4-coat.jpg",
+        description: "Button closureMaterial: high-quality polyester+wool fabric, breathable, comfortable and warm to wear Women mid-long coats, solid color, long sleeves, front button closure, double-breasted, notched lapel, 2 handbags on the side, 2 decorative buttons on the back.",
+        rating: 4.7,
+        link: "https://amzn.to/4aFWRPg",
+        itemType: "coat",
+      },
+      {
+        id: "fl-4-shoes",
+        title: "Women's Ankle Boots Pointed Toe Chunky Block Heel Short Boots for Women Low Heeled Booties",
+        image: "/images/f-4-boots.jpg",
+        description: "Wide Fit Assurance: Our women's ankle boots are a perfect match for your fashion needs. For those with wider feet, simply opt for a half size up to ensure a comfortable fit.",
+        rating: 4.6,
+        link: "https://amzn.to/4aubBC5",
+        itemType: "shoes",
+      },
+      {
+        id: "fl-4-bag",
+        title: "Small Real Lambskin Leather Crossbody Bag for Women, Wavy Quilted Shoulder Purse, Double Chain Strap, Flap Handbag",
+        image: "/images/f-4-bag.jpg",
+        description: "Premium Material : These women's crossbody handbags are crafted from high-quality lambskin leather, boasting a soft, luxurious texture and a durable finish.Distinctive Wave Pattern : The quilted purse features elegant wave stitching, delivering a sophisticated and timeless appearance.",
+        rating: 4.5,
+        link: "https://amzn.to/4qLrwk0",
+        itemType: "bag",
+      },
+      {
+        id: "fl-4-accessories",
+        title: "Layered Gold Necklaces for Women Trendy, 3 Pcs 14K Gold Plated Choker Paperclip Box Chain Necklace,",
+        image: "/images/f-4-necklace.jpg",
+        description: "Layered Necklace Set: This layered necklace consists of a paperclip chain, a box chain, and a pendant lip chain. As a stacked necklace, it is both elegant and cute. The layered necklace can be freely matched with your style, and you can wear it together or individually.",
+        rating: 4.8,
+        link: "https://amzn.to/46kY8db",
+        itemType: "accessories",
+      },
+    ],
+  },
 ];
