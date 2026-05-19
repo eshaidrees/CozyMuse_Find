@@ -25,7 +25,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${fullLook.title} - Full Look | CozyMuse Finds`,
+    title: `${fullLook.title} - Full Look | Found & Favoured`,
     description: fullLook.description,
     openGraph: {
       title: fullLook.title,

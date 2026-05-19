@@ -1,68 +1,65 @@
-import Link from 'next/link';
-
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8">About CozyMuse Finds</h1>
-
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Our Story</h2>
-          <p className="text-gray-600 mb-4">
-            Welcome to CozyMuse Finds, your curated destination for cute fashion and aesthetic home products.
-            We believe that life is better when surrounded by beautiful, cozy, and stylish items that bring joy
-            to your everyday moments.
-          </p>
-          <p className="text-gray-600 mb-4">
-            We carefully select each product based on quality, style, and value, focusing on items that
-            make you feel comfortable and confident. Whether you're looking for the perfect outfit for a cozy
-            day in or a beautiful piece to enhance your living space, we've got you covered.
-          </p>
+    <div className="min-h-screen bg-[#FCFAFA] py-24 md:py-32">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="text-center mb-20">
+          <span className="text-accent-blush text-sm font-bold uppercase tracking-[0.4em] px-4 py-1.5 rounded-full bg-accent-blush/5 border border-accent-blush/10 inline-block mb-6">Our Story</span>
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-stone-text mb-8 tracking-tight">About Found & <span className="text-accent-blush italic">Favoured</span> 🤍</h1>
+          <div className="w-24 h-1 bg-accent-blush/30 mx-auto"></div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Why Choose Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border-l-4 border-blue-500 pl-4">
-              <h3 className="font-medium text-gray-800 mb-2">Curated Selection</h3>
-              <p className="text-gray-600">
-                Every product on our site has been personally reviewed and selected for its quality and aesthetic appeal.
-              </p>
-            </div>
-            <div className="border-l-4 border-green-500 pl-4">
-              <h3 className="font-medium text-gray-800 mb-2">Trusted Partnerships</h3>
-              <p className="text-gray-600">
-                We partner with reputable sellers and brands to ensure authentic products and reliable service.
-              </p>
-            </div>
-            <div className="border-l-4 border-purple-500 pl-4">
-              <h3 className="font-medium text-gray-800 mb-2">Trend Awareness</h3>
-              <p className="text-gray-600">
-                Stay up-to-date with the latest trends in fashion and home decor through our carefully curated collections.
-              </p>
-            </div>
-            <div className="border-l-4 border-amber-500 pl-4">
-              <h3 className="font-medium text-gray-800 mb-2">Value Focused</h3>
-              <p className="text-gray-600">
-                We find the best deals and affordable options without compromising on style or quality.
-              </p>
-            </div>
+        <div className="bg-white rounded-[3rem] shadow-elegant border border-gray-50 p-10 md:p-20 mb-16 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-accent-blush/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+          
+          <div className="relative z-10 space-y-8">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-text mb-8 italic">Our Vision</h2>
+            <p className="text-gray-500 text-lg md:text-xl font-light leading-relaxed italic">
+              "Welcome to Found & Favoured, your curated destination for Pinterest-worthy fashion and effortless style. 
+              We believe that every woman deserves to feel confident and beautiful in what she wears, without the 
+              stress of endless searching."
+            </p>
+            <p className="text-gray-500 text-lg font-light leading-relaxed">
+              We carefully select each outfit based on current trends, quality reviews, and wearable aesthetic, 
+              focusing on pieces that transition seamlessly from your morning coffee to your evening plans. 
+              Whether you&apos;re looking for the perfect workwear blazer or a cozy matching set for your weekend 
+              adventures, we&apos;ve got you covered.
+            </p>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Our Commitment</h2>
-          <p className="text-gray-600 mb-4">
-            At CozyMuse Finds, transparency and customer satisfaction are our top priorities. As an Amazon
-            Affiliate, we earn commissions from qualifying purchases, but this never influences our product
-            recommendations. We only promote items we genuinely believe in and would use ourselves.
-          </p>
-          <p className="text-gray-600">
-            Thank you for trusting us with your shopping needs. We hope you find everything you're looking for
-            and discover new favorites along the way!
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div className="bg-white rounded-[2.5rem] shadow-soft border border-gray-50 p-10 hover:shadow-elegant transition-all duration-500 group">
+            <h3 className="font-serif font-bold text-stone-text mb-4 text-2xl group-hover:text-accent-blush transition-colors">Curated Trends</h3>
+            <p className="text-gray-500 font-light text-base leading-relaxed italic">
+              Every item on our site is handpicked to match the latest viral trends while maintaining a timeless 
+              and approachable appeal.
+            </p>
+          </div>
+          <div className="bg-white rounded-[2.5rem] shadow-soft border border-gray-50 p-10 hover:shadow-elegant transition-all duration-500 group">
+            <h3 className="font-serif font-bold text-stone-text mb-4 text-2xl group-hover:text-accent-blush transition-colors">Quality First</h3>
+            <p className="text-gray-500 font-light text-base leading-relaxed italic">
+              We sift through thousands of reviews to ensure that the products we recommend meet our high standards 
+              for fabric, fit, and durability.
+            </p>
+          </div>
         </div>
 
+        <div className="bg-stone-text text-white rounded-[3rem] p-10 md:p-20 shadow-hover relative overflow-hidden group">
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent-blush/10 rounded-full -ml-32 -mb-32 blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
+          
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl text-black font-serif font-bold mb-8">Our Commitment</h2>
+            <p className="text-gray-300 text-lg mb-8 font-light leading-relaxed max-w-3xl">
+              Transparency is at the heart of what we do. As an Amazon Affiliate, we earn commissions from 
+              qualifying purchases, which allows us to keep this platform running and free for you to explore. 
+              However, our recommendations are always driven by style and quality first—we only promote items 
+              we genuinely love and would wear ourselves.
+            </p>
+            <p className="text-black font-serif italic text-xl">
+              Thank you for being part of our community.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

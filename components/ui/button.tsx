@@ -13,7 +13,7 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        "cozy-primary": "bg-amber-100 text-amber-800 hover:bg-amber-200 rounded-xl py-3 px-6 text-base font-medium transition-all duration-300 shadow-sm hover:shadow-md",
+        "cozy-primary": "bg-accent-blush text-stone-text hover:bg-[#D4A3A3] rounded-xl py-3 px-6 text-base font-bold transition-all duration-300 shadow-sm hover:shadow-md",
         "cozy-secondary": "bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 rounded-xl py-3 px-6 text-base font-medium transition-all duration-300 shadow-sm hover:shadow-md",
       },
       size: {

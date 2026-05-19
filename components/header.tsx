@@ -8,11 +8,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close menu when route changes
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
-
   // Close menu on escape key press
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -33,12 +28,14 @@ const Header = () => {
   ];
 
   const categoryLinks = [
-    { name: 'Daily Outfits', href: '/category/daily-outfits' },
-    { name: 'Cozy Fashion', href: '/category/cozy-fashion' },
-    { name: 'Cute Accessories', href: '/category/cute-accessories' },
-    { name: 'Home Decor', href: '/category/home-decor' },
-    { name: 'Home Essentials', href: '/category/home-essentials' },
-    { name: 'Full Look', href: '/category/full-look' },
+    { name: 'Summer Outfits', href: '/category/summer-outfits' },
+    { name: 'Winter Outfits', href: '/category/winter-outfits' },
+    { name: 'Spring Outfits', href: '/category/spring-outfits' },
+    { name: 'Fall Outfits', href: '/category/fall-outfits' },
+    { name: 'Workwear', href: '/category/workwear' },
+    { name: 'Casual Looks', href: '/category/casual-looks' },
+    { name: 'Party Dresses', href: '/category/party-dresses' },
+    { name: 'Two-Piece Sets', href: '/category/two-piece-sets' },
   ];
 
   return (
@@ -51,54 +48,61 @@ const Header = () => {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-200"
+            className="text-2xl font-serif font-bold text-stone-text hover:text-accent-blush transition-all duration-300 tracking-tighter"
             aria-label="Home page"
+            onClick={() => setIsMenuOpen(false)}
           >
-            CozyMuse Finds
+            Found & <span className="text-accent-blush italic">Favoured</span>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`font-medium transition-colors duration-200 ${
+                className={`text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 relative group py-2 ${
                   pathname === link.href
-                    ? 'text-blue-600 border-b-2 border-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
+                    ? 'text-accent-blush'
+                    : 'text-stone-text/70 hover:text-stone-text'
                 }`}
                 aria-current={pathname === link.href ? 'page' : undefined}
               >
                 {link.name}
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent-blush transform origin-left transition-transform duration-300 ${
+                  pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`}></span>
               </Link>
             ))}
             {/* Category Dropdown */}
             <div className="relative group">
               <button
-                className="font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 focus:outline-none"
+                className="text-sm font-bold uppercase tracking-[0.2em] text-stone-text/70 hover:text-stone-text transition-all duration-300 flex items-center gap-1.5 focus:outline-none"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Categories
+                Collections
+                <span className="text-[10px] opacity-50 group-hover:rotate-180 transition-transform duration-300">▼</span>
               </button>
-              <div className="absolute hidden group-hover:block mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-50 border border-gray-200">
-                {categoryLinks.map((category) => (
-                  <Link
-                    key={category.name}
-                    href={category.href}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
-                  >
-                    {category.name}
-                  </Link>
-                ))}
+              <div className="absolute left-1/2 -translate-x-1/2 hidden group-hover:block pt-4 w-64 z-50 animate-fade-in">
+                <div className="bg-white shadow-hover rounded-2xl py-4 border border-gray-100 backdrop-blur-md bg-white/95">
+                  {categoryLinks.map((category) => (
+                    <Link
+                      key={category.name}
+                      href={category.href}
+                      className="block px-6 py-3 text-xs font-bold uppercase tracking-widest text-stone-text/70 hover:text-accent-blush hover:bg-gray-50/50 transition-all"
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded p-1"
+            className="md:hidden text-gray-700 hover:text-accent-blush focus:outline-none focus:ring-2 focus:ring-accent-blush rounded p-1"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -135,22 +139,22 @@ const Header = () => {
         {/* Mobile Menu */}
         <div
           id="mobile-menu"
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
             isMenuOpen
-              ? 'max-h-screen opacity-100 mt-4 pb-4'
+              ? 'max-h-[80vh] opacity-100 mt-6 pb-6'
               : 'max-h-0 opacity-0'
           }`}
           aria-hidden={!isMenuOpen}
         >
-          <div className="flex flex-col space-y-3 px-4 pt-2 pb-4 bg-white border-t border-gray-200 rounded-b-lg shadow-inner">
+          <div className="flex flex-col space-y-4 px-2 pt-4 pb-6 bg-white border-t border-gray-100 rounded-2xl shadow-hover">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`py-2 px-4 rounded-md transition-colors duration-200 ${
+                className={`py-3 px-6 rounded-xl transition-all duration-300 text-xs font-bold uppercase tracking-widest ${
                   pathname === link.href
-                    ? 'bg-blue-50 text-blue-600 font-medium'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? 'bg-accent-blush/10 text-accent-blush'
+                    : 'text-stone-text hover:bg-gray-50'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
                 aria-current={pathname === link.href ? 'page' : undefined}
@@ -159,20 +163,20 @@ const Header = () => {
               </Link>
             ))}
             {/* Mobile Category Dropdown */}
-            <div className="pt-2 border-t border-gray-200">
+            <div className="pt-4 border-t border-gray-100 mx-2">
               <details className="group">
-                <summary className="py-2 px-4 rounded-md text-gray-700 hover:bg-gray-100 cursor-pointer list-none">
+                <summary className="py-3 px-4 rounded-xl text-stone-text hover:bg-gray-50 cursor-pointer list-none text-xs font-bold uppercase tracking-widest">
                   <span className="flex justify-between items-center">
-                    <span>Categories</span>
-                    <span className="ml-2 group-open:rotate-180 transition-transform">▼</span>
+                    <span>Collections</span>
+                    <span className="ml-2 group-open:rotate-180 transition-transform duration-300">▼</span>
                   </span>
                 </summary>
-                <div className="pl-4 py-2 space-y-1">
+                <div className="pl-4 py-2 space-y-1 mt-2">
                   {categoryLinks.map((category) => (
                     <Link
                       key={category.name}
                       href={category.href}
-                      className="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md"
+                      className="block py-3 px-6 text-[11px] font-bold uppercase tracking-widest text-stone-text/70 hover:text-accent-blush hover:bg-gray-50 rounded-xl transition-all"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {category.name}

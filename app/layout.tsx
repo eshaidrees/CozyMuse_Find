@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google'; // Using Inter as a reliable Google font
+import { Inter, Playfair_Display } from 'next/font/google'; 
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-// Using Inter font from Google Fonts as a reliable Google font
-const geistSans = Inter({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-// For monospace, we'll use system monospace font
-const geistMono = { variable: '--font-geist-mono' };
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "CozyMuse Finds - Amazon Affiliate Store",
-  description: "Discover cute fashion and aesthetic home products curated from Amazon",
+  title: "Found & Favoured - Curated Amazon Fashion Finds",
+  description: "Discover your next favorite outfit with Found & Favoured. Handpicked, Pinterest-worthy fashion and aesthetic finds from Amazon.",
 };
 
 export default function RootLayout({
@@ -25,9 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${playfair.variable} antialiased font-sans text-stone-text`}
       >
         <Header />
         <main className="min-h-screen flex flex-col">

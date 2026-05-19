@@ -1,6 +1,8 @@
-import { products } from '@/data/products';
+import React from 'react';
+import { products, categories } from '@/data/products';
 import FullPageProductCard from '@/components/FullPageProductCard';
 import { notFound } from 'next/navigation';
+import CategoryHero from '@/components/CategoryHero';
 
 interface CategoryPageProps {
   params: Promise<{
@@ -8,67 +10,49 @@ interface CategoryPageProps {
   }>;
 }
 
-// Define category names mapping
-const validCategories = [
-  'daily-outfits',
-  'cozy-fashion',
-  'cute-accessories',
-  'home-decor',
-  'home-essentials'
-];
-
-const categoryNames: Record<string, string> = {
-  'daily-outfits': 'Daily Outfits',
-  'cozy-fashion': 'Cozy Fashion',
-  'cute-accessories': 'Cute Accessories',
-  'home-decor': 'Home Decor',
-  'home-essentials': 'Home Essentials',
-};
-
 const CategoryPage = async ({ params }: CategoryPageProps) => {
   const { slug } = await params;
 
-  // Validate the slug
-  if (!validCategories.includes(slug)) {
+  // Find the category object to validate and get details
+  const currentCategory = categories.find(c => c.id === slug);
+
+  if (!currentCategory) {
     notFound();
   }
 
   // Filter products based on the category slug
   const filteredProducts = products.filter(product => product.category === slug);
 
-  // Get the display name for the category
-  const categoryName = categoryNames[slug];
-
-  if (filteredProducts.length === 0) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white flex items-center justify-center">
-        <div className="text-center py-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{categoryName}</h1>
-          <h2 className="text-xl text-gray-600">No products found in this category</h2>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
-      <div className="container mx-auto px-4">
-        <h1 className="sr-only">{categoryName}</h1>
+    <div className="min-h-screen bg-[#FCFAFA]">
+      <CategoryHero 
+        title={currentCategory.title} 
+        description={currentCategory.description} 
+      />
 
-        {filteredProducts.map((product, index) => (
-          <FullPageProductCard
-            key={product.id}
-            id={product.id || ''}
-            title={product.title}
-            image={product.image}
-            description={product.description}
-            rating={product.rating}
-            link={product.link}
-            slug={product.slug}
-            index={index}
-            totalProducts={filteredProducts.length}
-          />
-        ))}
+      <div className="container mx-auto px-4 pb-24">
+        {filteredProducts.length === 0 ? (
+          <div className="text-center py-32 bg-white rounded-[3rem] shadow-elegant border border-gray-100">
+            <h2 className="text-2xl text-gray-400 font-serif italic">More curated finds coming soon to this collection...</h2>
+          </div>
+        ) : (
+          <div className="max-w-7xl mx-auto space-y-0">
+            {filteredProducts.map((product, index) => (
+              <FullPageProductCard
+                key={product.id}
+                id={product.id || ''}
+                title={product.title}
+                image={product.image}
+                description={product.description}
+                rating={product.rating}
+                link={product.link}
+                slug={product.slug}
+                index={index}
+                totalProducts={filteredProducts.length}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

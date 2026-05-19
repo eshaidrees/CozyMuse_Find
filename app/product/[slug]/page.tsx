@@ -6,12 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 
-interface ProductPageProps {
-  params: Promise<{
-    slug: string;
-  }>;
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const product = products.find(p => p.slug === slug);
@@ -24,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${product.title} - CozyMuse Finds`,
+    title: `${product.title} - Found & Favoured`,
     description: product.description,
     openGraph: {
       title: product.title,
@@ -53,81 +47,82 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const hasHalfStar = product.rating % 1 > 0.5;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-gray-100">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-[#FCFAFA]">
+      <div className="container mx-auto px-4 py-12">
         {/* Breadcrumb */}
-        <nav className="mb-6 text-sm text-gray-600">
-          <Link href="/" className="hover:text-amber-600 transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <Link href="/shop" className="hover:text-amber-600 transition-colors">Shop</Link>
-          <span className="mx-2">/</span>
-          <Link href={`/category/${product.category}`} className="hover:text-amber-600 transition-colors capitalize">
+        <nav className="mb-8 text-xs text-gray-400 uppercase tracking-widest flex justify-center">
+          <Link href="/" className="hover:text-accent-blush transition-colors">Home</Link>
+          <span className="mx-3">/</span>
+          <Link href="/shop" className="hover:text-accent-blush transition-colors">Shop</Link>
+          <span className="mx-3">/</span>
+          <Link href={`/category/${product.category}`} className="hover:text-accent-blush transition-colors">
             {product.category.replace('-', ' ')}
           </Link>
-          <span className="mx-2">/</span>
-          <span className="text-gray-800">{product.title}</span>
+          <span className="mx-3">/</span>
+          <span className="text-stone-text font-semibold">{product.title}</span>
         </nav>
 
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-10">
+        <div className="bg-white rounded-[2rem] shadow-sm border border-soft-pink/30 overflow-hidden max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-16">
             {/* Full-width/height image section */}
-            <div className="rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center aspect-square md:aspect-auto md:h-[500px]">
+            <div className="rounded-[1.5rem] overflow-hidden bg-white flex items-center justify-center p-8 border border-soft-pink/10">
               <Image
                 src={product.image}
                 alt={product.title}
                 width={600}
                 height={600}
-                className="w-full h-full object-contain"
+                className="w-full h-auto object-contain"
                 priority
               />
             </div>
 
             {/* Product details section */}
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col justify-center">
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h1 className="text-3xl md:text-5xl font-bold text-stone-text mb-6 leading-tight">
                   {product.title}
                 </h1>
 
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-8">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-5 h-5 ${
+                        className={`w-4 h-4 ${
                           i < fullStars
-                            ? 'text-amber-500 fill-amber-500'
+                            ? 'text-accent-blush fill-accent-blush'
                             : hasHalfStar && i === fullStars
-                              ? 'text-amber-500 fill-amber-500'
-                              : 'text-gray-300'
+                              ? 'text-accent-blush fill-accent-blush'
+                              : 'text-gray-200'
                         }`}
                       />
                     ))}
                   </div>
-                  <span className="ml-2 text-gray-600">{product.rating.toFixed(1)}</span>
+                  <span className="ml-2 text-xs text-gray-400 font-medium uppercase tracking-wider">{product.rating.toFixed(1)} Rating</span>
                 </div>
 
-                <p className="text-gray-700 text-base leading-relaxed mb-6">
+                <p className="text-gray-600 text-lg leading-relaxed mb-10 font-light italic">
                   {product.description}
                 </p>
 
-                <div className="mb-6">
+                <div className="mb-10">
                   <Button
                     asChild
-                    className="w-full py-6 text-base sm:text-lg font-semibold bg-amber-600 hover:bg-amber-700 transition-colors"
+                    size="lg"
+                    className="w-full py-8 text-lg font-bold bg-accent-blush hover:opacity-90 transition-all rounded-full shadow-lg h-16"
                   >
                     <a
                       href={product.link}
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                     >
-                      Check latest price on Amazon
+                      Shop the Find
                     </a>
                   </Button>
                 </div>
               </div>
 
-              <div className="text-center text-sm text-gray-500">
+              <div className="text-center text-[10px] text-gray-400 uppercase tracking-widest">
                 <p>As an Amazon Associate, we earn from qualifying purchases.</p>
               </div>
             </div>
