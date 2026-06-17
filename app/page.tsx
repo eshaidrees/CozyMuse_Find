@@ -13,57 +13,120 @@ export default function Home() {
     <div className="min-h-screen bg-white">
 
       {/* Hero Section */}
-      <section className="relative py-28 md:py-48 overflow-hidden">
-        <Image 
-          src="/images/spr-1.jpg" 
-          alt="Spring Fashion Inspiration" 
-          fill 
-          priority 
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white"></div>
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#FAF9F6]">
+        {/* Perfect Mesh Gradient & Image Background */}
+        <div className="absolute inset-0 z-0">
+          {/* Subtle Fashion Imagery */}
+          <div className="absolute inset-0 opacity-30">
+            <Image 
+              src="/images/casual-2.jpg" 
+              alt="Background Style" 
+              fill 
+              className="object-cover object-top grayscale-[30%]"
+              priority
+            />
+          </div>
+          
+          {/* Layered Mesh Gradient */}
+          <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_0%_0%,#FDF2F2_0%,transparent_50%),radial-gradient(circle_at_100%_0%,#E5B6B6_0%,transparent_50%),radial-gradient(circle_at_50%_100%,#F5F5DC_0%,transparent_50%)]"></div>
+          
+          {/* Texture Overlay */}
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-20"></div>
+          
+          {/* Soft Vignette */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FAF9F6]"></div>
+        </div>
+
+        {/* Decorative Animated Orbs */}
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, 30, 0]
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/4 -left-20 w-96 h-96 bg-accent-blush/20 rounded-full blur-[120px]"
+        ></motion.div>
+        <motion.div 
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            x: [0, -50, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-1/4 -right-20 w-[30rem] h-[30rem] bg-soft-pink/30 rounded-full blur-[150px]"
+        ></motion.div>
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+            
+            {/* Elegant Floating Badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-blush/10 text-accent-blush text-xs font-bold uppercase tracking-widest mb-8"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-blush/5 border border-accent-blush/10 text-accent-blush text-[10px] uppercase tracking-[0.4em] mb-10"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>The Curated Edit</span>
+              <span>Curated with Love</span>
             </motion.div>
+
+            {/* Refined Heading - Simple & Elegant */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-6xl md:text-9xl font-serif font-bold text-stone-text mb-8 tracking-tight leading-[0.85] drop-shadow-sm"
+              transition={{ duration: 1, delay: 0.2 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-stone-text mb-8 tracking-tight leading-tight"
             >
-              Elevate Your <br /> 
-              <span className="text-accent-blush italic">Daily Style</span> 🤍
+              Elevate Your <br />
+              <span className="text-accent-blush italic font-medium">Daily Style</span>
             </motion.h1>
+
+            {/* Minimalist Divider */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
+              className="w-16 h-[1.5px] bg-accent-blush/30 mb-10"
+            ></motion.div>
+
+            {/* Graceful Subtext */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg md:text-2xl text-gray-500 mb-12 max-w-2xl mx-auto font-light leading-relaxed tracking-wide"
+              transition={{ duration: 1, delay: 0.4 }}
+              className="text-lg md:text-xl text-gray-500 font-light max-w-xl mb-14 leading-relaxed tracking-wide italic"
             >
-              Curated Amazon fashion finds for the modern, effortless wardrobe.
+              "Hand-picked fashion treasures from Amazon, <br className="hidden md:block" />
+              chosen for the modern, effortless wardrobe."
             </motion.p>
+
+            {/* Polished CTA Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="flex flex-col items-center gap-10"
             >
               <Button
                 size="lg"
-                className="bg-accent-blush hover:bg-[#D4A3A3] text-stone-text px-12 rounded-full h-16 text-lg font-bold shadow-elegant hover:shadow-hover transition-all hover:scale-[1.05] active:scale-[0.95]"
-                onClick={() => document.getElementById('spring-dresses')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-accent-blush hover:bg-[#D4A3A3] text-black px-14 rounded-full h-16 text-lg font-medium shadow-soft hover:shadow-elegant transition-all hover:scale-[1.02] active:scale-[0.98]"
+                onClick={() => document.getElementById('summer-outfits')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Start Shopping
+                Shop the Collection
               </Button>
+              
+              {/* Subtle Scroll Hint */}
+              <div className="flex flex-col items-center gap-3 opacity-30">
+                <span className="text-[9px] uppercase tracking-[0.6em] text-stone-text font-bold">Explore</span>
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="w-[1px] h-10 bg-gradient-to-b from-stone-text to-transparent"
+                ></motion.div>
+              </div>
             </motion.div>
+
           </div>
         </div>
       </section>
